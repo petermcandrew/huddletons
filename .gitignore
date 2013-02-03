@@ -1,6 +1,6 @@
-drupal/sites/*/settings.php
-drupal/sites/*/civicrm.settings.php
-drupal/sites/*/files
+sites/*/settings.php
+sites/*/civicrm.settings.php
+sites/*/files
 
 *.mysql
 
