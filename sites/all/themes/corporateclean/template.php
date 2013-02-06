@@ -127,6 +127,7 @@ if (theme_get_setting('slideshow_js','corporateclean')):
 		$("#slider-controls-wrapper").fadeIn("slow");
 	
 		$("#slideshow").cycle({
+			timeout: ' . $effect_time . ',
 			fx:    "'.$effect.'",
 			speed:  "slow",
 			random: '.$slideshow_randomize.',
