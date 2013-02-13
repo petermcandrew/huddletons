@@ -1,0 +1,24 @@
+name = md construction
+description = Under Construction theme for Drupal 7 by <a href="http://megadrupal.com" target="_blank">MegaDrupal</a>
+screenshot = images/screenshot.png
+core = 7.x
+project = "md_construction"
+engine = phptemplate
+
+features[] = logo
+features[] = favicon
+
+stylesheets[all][] = css/style.css
+scripts[] = "js/script.js"
+
+settings[md_construction_color]            	= blue
+settings[md_construction_image_url]        	= http://files.megadrupal.com/md_construction/soon.jpg
+settings[md_construction_headtitle]        	= MegaDrupal is underconstruction
+settings[md_construction_twitter]        		= megadrupal
+settings[md_construction_facebook]        	= pages/MegaDrupal/116514681753894
+; Information added by drupal.org packaging script on 2011-03-05
+version = "7.x-1.6"
+core = "7.x"
+project = "md_construction"
+datestamp = "1299333968"
+
