@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Adds custom Freehold widgets to the sidebar. 
+ */
+ 
+/**
+ * Implements hook_uninstall().
+ */
+function freehold_uninstall() {
+
+  variable_del('freehold_flicker_username');
+  variable_del('freehold_twitter_username');
+  
+}

@@ -1,0 +1,3 @@
+name = Freehold Custom
+description = This is a custom module for the Freehold theme to display specific content.
+core = 7.x

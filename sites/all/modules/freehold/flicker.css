@@ -1,0 +1,6 @@
+#flickr-widget ul {margin:0; padding:0;background:none; }
+#flickr-widget ul li { padding:0px !important; margin:0px; list-style:none !important; display:inline; border:none; background:transparent;}
+#flickr-widget ul li a {display:inline;  padding:0px; background:#fff;}
+#flickr-widget ul li img {background:#fff;  width:54px; height:54px;  margin:0px 10px 10px 0px; -webkit-transition: all .5s ease; -moz-transition: all .5s ease; transition: all .5s ease; border:1px solid #ddd; padding:3px; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+#flickr-widget ul li img:hover {    border-color:#999; -moz-box-shadow: 1px 1px 4px rgba(0,0,0,.25); -webkit-box-shadow: 1px 1px 4px rgba(0,0,0,.25); box-shadow:  1px 1px 4px rgba(0,0,0,.25);}
+

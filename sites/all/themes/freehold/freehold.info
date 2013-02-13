@@ -1,0 +1,78 @@
+name        = Freehold
+description = Freehold - Responsive Drupal 7 Real Estate Theme
+screenshot  = screenshot.png
+
+core        = 7.x
+engine      = phptemplate
+
+stylesheets[all][]        = css/styles.css
+stylesheets[all][]        = css/responsive.css
+stylesheets[all][]        = css/freehold.css
+
+scripts[] = js/plugins.js
+scripts[] = js/libs/modernizr-2.0.6.min.js
+scripts[] = js/functions.js
+
+regions[content]        = Content
+regions[newlistings]    = Latest Listings
+regions[listingagent]   = Listings Agent
+regions[advsearch]      = Advanced Search
+regions[navigation]     = Navigation
+regions[sidebar]        = Sidebar
+regions[footerabout]    = Footer About
+regions[footerlinks]    = Footer Links
+regions[footertypes]    = Footer Property Types
+
+;Social Media
+settings[freehold_social_rss] = http://google.com
+settings[freehold_social_facebook] = http://google.com
+settings[freehold_social_twitter] = http://google.com
+settings[freehold_social_skype] = http://google.com
+settings[freehold_social_vimeo] = http://google.com
+settings[freehold_social_linkedin] = http://google.com
+settings[freehold_social_dribbble] = http://google.com
+settings[freehold_social_youtube] = http://google.com
+settings[freehold_social_google] = http://google.com
+settings[freehold_social_flikr] = http://google.com
+
+;Theme Colors
+settings[freehold_css_header_bgcolor] = #5b89a3
+settings[freehold_css_navigation_bgcolor] = #697884
+settings[freehold_css_linkbuttons_bgcolor] = #5b89a3
+settings[freehold_css_inputbuttons_bgcolor] = #FF8C68
+
+;Misc Settings
+settings[freehold_copywrite] = &copy; 2012 All Rights Reserved. Developed by Splashed Marketing, Inc.
+settings[freehold_company_name] = Splashed Marketing, Inc.
+settings[freehold_address] = 1060 West Addison Street
+settings[freehold_city] = Chicago
+settings[freehold_state] = IL
+settings[freehold_zip] = 60613
+settings[freehold_phonenumber] = (800) 536-3532
+settings[freehold_contact_email] = no-reply@splashedmarketing.com
+settings[freehold_styleswitcher] = 1
+settings[freehold_google_listing_zoom] = 12
+settings[freehold_google_contact_zoom] = 12
+
+;Typography Settings
+settings[freehold_css_body_fontfamily] = "Helvetica Neue", Helvetica, Arial, Sans-Serif
+settings[freehold_css_body_fontsize] = 12
+settings[freehold_css_navigation_fontcolor] = #FFFFFF 
+settings[freehold_css_navigation_fontfamily] = 'Droid Sans'
+settings[freehold_css_navigation_fontsize] = 15
+settings[freehold_css_headings_h1_fontcolor] = #737373
+settings[freehold_css_headings_h1_fontsize] = 22
+settings[freehold_css_headings_h1_fontfamily] = 'PT Sans', sans-serif
+settings[freehold_css_headings_h2_fontcolor] = #737373 
+settings[freehold_css_headings_h2_fontsize] = 15
+settings[freehold_css_headings_h2_fontfamily] = 'PT Sans', sans-serif
+settings[freehold_css_headings_h3_fontcolor] = #737373
+settings[freehold_css_headings_h3_fontsize] = 16
+settings[freehold_css_headings_h3_fontfamily] = 'PT Sans', sans-serif
+settings[freehold_css_headings_h4_fontcolor] = #737373
+settings[freehold_css_headings_h4_fontsize] = 16
+settings[freehold_css_headings_h4_fontfamily] = 'PT Sans', sans-serif
+settings[freehold_css_headings_h5_fontcolor] = #737373
+settings[freehold_css_headings_h5_fontsize] = 15
+settings[freehold_css_headings_h5_fontfamily] = 'PT Sans', sans-serif
+settings[freehold_css_links_fontcolor] = #737373

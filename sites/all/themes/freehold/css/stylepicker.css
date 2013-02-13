@@ -1,0 +1,53 @@
+#stylepicker{
+  height: auto;
+  min-height: 200px;
+  width: 220px;
+  border: 1px solid #B6B6B6;
+  position: fixed;
+  top: 30%;
+  left: 0px;
+  z-index: 499;
+  background: #FDFDFD;
+  -webkit-border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 5px 5px 0px;
+  padding: 5px;
+  font-size: 11px;
+}
+#stylepicker input,
+#stylepicker select{
+  height: auto;
+  padding: 3px;
+}
+#stylepicker #gear{
+  height: 45px;
+  width: 45px;
+  background: #FDFDFD url("../images/gear_icon.png") no-repeat center center;
+  position: absolute;
+  right: -46px;
+  top: 50px;
+  -webkit-border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 5px 5px 0px;
+  cursor: pointer;
+  border: 1px solid #B6B6B6;
+  border-left: 0 none;
+}
+#stylepicker #desc{
+  text-align: left;
+  font-weight: bold;
+  margin: 5px 0 10px 5px;
+}
+#stylepicker #desc p{
+  font-style: italic;
+  font-weight: normal;
+  line-height: 100%;
+  margin: 10px 0 10px;
+}
+#stylepicker .style-container{
+  padding: 5px 10px;
+  border-bottom: 1px solid #ddd;
+  margin: 0 0 5px;
+}
+#stylepicker .style-container span{
+  text-transform: uppercase; 
+  font-size: 11px;
+}  

@@ -1,0 +1,179 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function freehold_block_info() {
+  $blocks['freehold_twitter'] = array(
+    'info' => t('Twitter Feed'),
+  );
+  $blocks['freehold_flicker'] = array(
+    'info' => t('Flicker Feed'), 
+  );
+  $blocks['freehold_search'] = array(
+    'info' => t('Advanced Search'), 
+  );    
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function freehold_block_view($delta = '') {
+  
+  $path = drupal_get_path('module', 'freehold');
+
+  switch($delta){
+
+    /* this is used to mimic the main search into the sidebar area */  
+    case 'freehold_search':
+      $block['subject'] = t('Advanced Search');
+      $block['content'] = t('
+      <div class="advanced-search-form">
+					<form method="get" class="advanced-searchform" action="">
+						<div><input type="text" class="field" name="title" id="keyword" placeholder="Enter a keyword..." /></div>
+						
+						<div class="header-prop-typestatus hidden-value-tablet">
+    					<select name="status"> 
+    						<option value="All" selected="selected">Property Status</option> 
+    						<option value="9">For Rent</option> 
+    						<option value="8">For Sale</option> 
+    						<option value="10">Open House</option> 
+    						<option value="11">Sold</option> 						
+    					</select>
+    				</div>
+    				
+      		<div class="header-advanced-bedbath">
+  					<select name="garage"> 
+  						<option value="All" selected="selected">Garages</option> 
+  						<option value="1">1</option> 
+  						<option value="2">2</option> 
+  						<option value="3">3</option> 
+  						<option value="4">4</option>
+  						<option value="5">5</option>
+  						<option value="6">6</option>
+  						<option value="7">7</option>																		
+  					</select>
+  				</div>
+												
+						<div class="clearfix"></div>
+						
+						<div class="advanced-two-column drop-down-fix">
+							<label for="locations" class="assistive-text">Beds:</label>
+								<select name="rooms"> 
+      						<option value="All" selected="selected">Beds</option> 
+      						<option value="1">1</option> 
+      						<option value="2">2</option> 
+      						<option value="3">3</option> 
+      						<option value="4">4</option> 
+      						<option value="5">5</option> 
+      						<option value="6">6</option>
+      						<option value="7">7</option>						
+      					</select>
+						</div>	
+						<div class="advanced-two-column last-two-column">
+							<label for="locations" class="assistive-text">Baths:</label>
+							<select name="baths"> 
+    						<option value="All" selected="selected">Baths</option> 
+    						<option value="1">1</option> 
+    						<option value="2">2</option> 
+    						<option value="3">3</option> 
+    						<option value="4">4</option>
+    						<option value="5">5</option>
+    						<option value="6">6</option>
+    						<option value="7">7</option>																		
+    					</select>
+						</div>
+						<div class="clearfix"></div>
+						
+						<div class="header-prop-typestatus">
+    					<select name="type"> 
+    						<option value="All" selected="selected">Property Types</option> 
+    						<option value="5">Apartment</option>
+    						<option value="3">Condo</option>
+    						<option value="4">Mansion</option>
+    						<option value="2">Multi-Family</option>
+    						<option value="7">Other</option>
+    						<option value="1">Single Family</option>
+    						<option value="6">Villa</option>																								
+    					</select>
+    				</div>
+
+						<div><input type="submit" class="submit-advanced" value="Search" /></div>
+					</form>
+					</div>
+
+      ');
+    
+    break;
+  
+    /* only for twitter content */  
+    case 'freehold_twitter':
+    
+      drupal_add_js($path . "/freehold.twitter.js");
+      drupal_add_js(
+        array('freehold' => 
+          array('twitterusername' => variable_get('freehold_twitter_username', NULL))
+        ), 
+      array('type' => 'setting'));
+      
+      $block['subject'] = t('Twitter Feed');
+      $block['content'] = t('<div id="tweets-sidebar" class="tweets-widget1"></div><div class="clearfix"></div>');
+      break;
+      
+    /* only for flicker content */
+    case 'freehold_flicker':
+           
+      drupal_add_js($path . "/freehold.flicker.js");
+      drupal_add_css($path . "/flicker.css");
+      
+      drupal_add_js(
+        array('freehold' => 
+          array('authorid' => variable_get('freehold_flicker_username', NULL))
+        ), 
+      array('type' => 'setting'));      
+    
+      $block['subject'] = t('Flicker Feed');
+      $block['content'] = t('<div id="flickr-widget" class="flickr-widget-1"></div><div class="clearfix"></div>');
+    
+    break;  
+  }
+  return $block;
+  
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function freehold_block_configure($delta = '') {
+  // This example comes from node.module.
+  $form = array();
+  if ($delta == 'freehold_twitter') {
+    $form['freehold_twitter_username'] = array(
+      '#type' => 'textfield', 
+      '#title' => t('Enter your Twitter Username'), 
+      '#default_value' => variable_get('freehold_twitter_username', NULL), 
+    );
+  }
+  if ($delta == 'freehold_flicker') {
+    $form['freehold_flicker_username'] = array(
+      '#type' => 'textfield', 
+      '#title' => t('Flicker Author ID'), 
+      '#default_value' => variable_get('freehold_flicker_username', NULL), 
+    );
+  }  
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function freehold_block_save($delta = '', $edit = array()) {
+  // This example comes from node.module.
+  if ($delta == 'freehold_twitter') {
+    variable_set('freehold_twitter_username', $edit['freehold_twitter_username']);
+  }
+  if ($delta == 'freehold_flicker') {
+    variable_set('freehold_flicker_username', $edit['freehold_flicker_username']);
+  }  
+}
