@@ -259,11 +259,9 @@ if($features->rowCount() > 0){
 							<li>Bedrooms:	<span><?php print $result->field_bedrooms_value;?></span></li>
 							<li>Bathrooms:	<span><?php print $result->field_bathrooms_value;?></span></li>
 							<li>Property type:	<span><?php print $result->name;?></span></li>
-							<li>Size:	<span><?php print $result->field_lot_size_value;?></span></li>
-							<li>Lot:	<span><?php print $result->field_property_size_value;?></span></li>
-							<li>Year built:	<span><?php print $result->field_year_built_value;?></span></li>
+							<li>Size:	<span><?php print $result->field_property_size_value;?></span></li>
 							<li>Added: <span><?php print ago($result->created);?></span></li>
-							<li>Zip:	<span><?php print $result->field_zip_value;?></span></li>
+							<li>Postcode:	<span><?php print $result->field_zip_value;?></span></li>
 						</ul>	
 				</div><!-- close .content-boxed -->
 				
